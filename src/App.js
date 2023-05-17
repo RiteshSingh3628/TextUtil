@@ -53,13 +53,17 @@ function App() {
       {/* navBar */}
         <Navbar title = "TextUtils" mode={mode} toggleMode={toggleMode}/>
         <Alert alert ={alert}/>
-      <BrowserRouter>
+        <div className="container my-3">
+          <TextForm  heading = "Enter Text To Analyze" mode={mode} showAlert={showAlert} />
+        </div>
+
+      {/* <BrowserRouter>
         <Routes>
           <Route path='/About' element={<About mode = {mode}/>} />
           <Route path='/' element={<TextForm heading = "Enter Text To Analyze" mode={mode} showAlert={showAlert} />} />
           <Route path='/Contact' element={<Contact />} />
         </Routes>      
-      </BrowserRouter>
+      </BrowserRouter> */}
     </div>
 
    
