@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ nav{
+    display: flex;
+    background-color: rgb(8, 8, 17);
+    justify-content:space-between;
+    align-items: center;
+    position: relative;
+}
+
+ nav .hamburger{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    /* background-color: brown; */
+    transition: all 0.5s ease-in-out;
+}
+ nav .hamburger .line{
+    width: 40px;
+    height: 5px;
+    background-color: aliceblue;
+    margin: 5px;
+    
+
+}
+
+ nav ul{
+    display: flex;
+    list-style: none;
+    height: 100%;
+    
+}
+
+ nav ul li a{
+    font-size: 18px;
+    margin: 0 10px 0 10px;
+    text-decoration: none;
+    color: bisque;
+    transition: all 0.25s ease-in-out;
+    height: 100%;
+    font-weight: 500;
+}
+
+nav ul li a:hover{
+    color: blueviolet;
+}
+
+.sideBar{
+    width: 200px;
+    height: 90%;
+    background-color: blueviolet;
+    position: absolute;
+    left: -200px;
+    transition: all 0.25s ease-in;
+    z-index: 300;
+    
+    
+}
+
+.sideBar ul{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    list-style: none;
+    padding:0;
+    
+}
+.sideBar ul li{
+    width: 100%;
+    background-color:rgb(8, 8, 17) ;
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    transition: all 0.5s ease-in-out;
+    
+}
+.sideBar ul li a{
+    color: aliceblue;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.sideBar ul li:hover{
+    background-color: aqua;
+    
+}
+
+
+.logo{
+    color:deepskyblue;
+    font-size: 24px;
+    
+}
+
+nav .logo a{
+    text-decoration: none ;
+    color: aliceblue;
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+nav button{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+ #dark-btn{
+    border-color: rgb(122, 197, 241);
+    background-color: blue;
+}
+ #light-btn{
+    border-color:whitesmoke;
+}

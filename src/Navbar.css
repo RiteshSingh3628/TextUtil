@@ -1,0 +1,55 @@
+:root{
+    --clr-body-bg: hsl(0 0% 90%);
+    --clr-card-bg: hsl(0 0% 100%);
+    --clr-text: hsl(0 0% 15%);
+    --clr-heading: hsl(0 0% 25%);
+}
+
+
+
+.color-picker {
+    border: 0;/* to turn disable the border of the field set */
+    display: flex;
+    gap: 1rem;
+    background: #363131;
+    width: fit-content;
+    padding: 1rem 3rem;
+    border-radius: 0 0 1rem 1rem;
+    margin-inline: auto;
+
+
+}
+
+.color-picker input[type="radio"]{
+    appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 3px solid var(--radio-color,currentColor);
+    border-radius: 50%;
+   
+    
+}
+
+
+.color-picker input[type="radio"]#pink{
+    --radio-color: pink;
+}
+.color-picker input[type="radio"]#dark{
+    --radio-color: rgb(2, 2, 8);
+}
+.color-picker input[type="radio"]#light{
+    --radio-color: white;
+}
+.color-picker input[type="radio"]#green{
+    --radio-color: green;
+}
+
+.color-picker input[type="radio"]:checked{
+    background-color: var(--radio-color);
+}
+
+.logo{
+    color:deepskyblue;
+    font-size: 24px;
+    
+}

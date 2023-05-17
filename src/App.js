@@ -1,24 +1,68 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
 
+import {BrowserRouter,Route, Routes} from "react-router-dom"
+
+import Navbar from './components/NavBar';
+import TextForm from './components/TextForm';
+import Alert from './components/Alert';
+import About from './components/About';
+import Contact from './components/Contact';
+
+
 function App() {
+  const [mode,setMode] = useState("dark")
+  const [alert, setAlert] = useState(null)
+  
+
+  // Alert message function
+  const showAlert = (message,type)=>{
+    setAlert({
+      message:message,
+      type:type
+    })
+    // logic for 2 sec appearence of alert
+    setTimeout(()=>{
+      setAlert(null)
+    },1000)
+
+    
+  }
+
+
+  // Theme Switcher function
+  const toggleMode = (e)=>{
+    console.log("message",e )
+    // setMode(e)
+    if(mode == "dark"){
+      document.body.style.background="black"
+      console.log("message",e )
+    }
+    else if(mode == "light"){
+      document.body.style.background="white"
+      console.log("message",e )
+    }
+  }
+
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* navBar */}
+        <Navbar title = "TextUtils" mode={mode} toggleMode={toggleMode}/>
+        <Alert alert ={alert}/>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/About' element={<About mode = {mode}/>} />
+          <Route path='/' element={<TextForm heading = "Enter Text To Analyze" mode={mode} showAlert={showAlert} />} />
+          <Route path='/Contact' element={<Contact />} />
+        </Routes>      
+      </BrowserRouter>
     </div>
+
+   
   );
 }
 
